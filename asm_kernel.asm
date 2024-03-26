@@ -1,5 +1,5 @@
 section .data
-msg db "Hi, this is the ASM kernel.",13,10,0
+msg db "Hi, this is the ASM kernel. Thank yewww",13,10,0
 
 section .text
 bits 64
