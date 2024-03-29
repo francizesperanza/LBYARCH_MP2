@@ -20,7 +20,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

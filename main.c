@@ -53,6 +53,7 @@ int main(int argc, char* argv[]) {
 	printf("\nExecution time of C Implementation: %.5f seconds\n", exec_time);
 
 	/* x86_64 Implementation */
+	printf("x84-64 calling C:\n");
 	asm_kernel_start();
 
 	free(X);
