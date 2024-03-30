@@ -1,6 +1,4 @@
 section .data
-;msg db "Hi, this is the ASM kernel. Thank yewww",13,10,0
-
 
 section .text
 bits 64

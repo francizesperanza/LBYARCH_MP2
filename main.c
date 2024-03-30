@@ -2,14 +2,10 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <time.h>
+#include "c_kernel.h"
 
+extern void c_kernel_start(int n, float A, float* X, float* Y, float* Z);
 extern void asm_kernel_start(int n, float A, float* X, float* Y, float* Z);
-
-void c_kernel_start(int n, float A, float* X, float* Y, float* Z) {
-	for (int i = 0; i < n; i++) {
-		Z[i] = A * X[i] + Y[i];
-	}
-}
 
 void display_results(int n, float* Z) {
 	if (n < 10) {
@@ -41,6 +37,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	/* C Implementation */
+	printf("C calling C:\n");
 	clock_t start1, end1;
 
 	start1 = clock();			// start the timer
@@ -48,12 +45,13 @@ int main(int argc, char* argv[]) {
 	end1 = clock();				// end the timer
 
 	display_results(n, Z);
+	printf("\n");
 
 	double exec_time = (double)(end1 - start1) / (double)CLOCKS_PER_SEC;
 	printf("\nExecution time of C Implementation: %.5f seconds\n", exec_time);
 
 	/* x86_64 Implementation */
-	printf("x86-64 calling C:\n");
+	printf("\nx86-64 calling C:\n");
 
 	clock_t start2, end2;
 
