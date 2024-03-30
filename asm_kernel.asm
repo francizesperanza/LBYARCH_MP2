@@ -1,3 +1,4 @@
+; Franciz Emmanuelle Angelo L. Esperanza, Charles Joseph V. Hinolan S14
 section .data
 
 section .text
