@@ -36,6 +36,8 @@ int main(int argc, char* argv[]) {
 		Y[i] = 110.0 + i;
 	}
 
+	printf("Vector Size: %d\n", n);
+
 	/* C Implementation */
 	printf("C calling C:\n");
 	clock_t start1, end1;
