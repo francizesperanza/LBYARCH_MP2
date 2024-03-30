@@ -54,9 +54,18 @@ int main(int argc, char* argv[]) {
 
 	/* x86_64 Implementation */
 	printf("x86-64 calling C:\n");
+
+	clock_t start2, end2;
+
+	start2 = clock();
 	asm_kernel_start(n, A, X, Y, Z);
+	end2 = clock();
+
 	display_results(n, Z);
 	printf("\n");
+	double asm_exec_time = (double)(end2 - start2) / (double)CLOCKS_PER_SEC;
+	printf("\nExecution time of x86-64 Implementation: %.5f seconds\n", asm_exec_time);
+	
 	free(X);
 	free(Y);
 	free(Z);
