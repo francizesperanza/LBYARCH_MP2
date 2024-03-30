@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <time.h>
 
-extern void asm_kernel_start();
+extern void asm_kernel_start(int n, float A, float* X, float* Y, float* Z);
 
 void c_kernel_start(int n, float A, float* X, float* Y, float* Z) {
 	for (int i = 0; i < n; i++) {
@@ -53,9 +53,10 @@ int main(int argc, char* argv[]) {
 	printf("\nExecution time of C Implementation: %.5f seconds\n", exec_time);
 
 	/* x86_64 Implementation */
-	printf("x84-64 calling C:\n");
-	asm_kernel_start();
-
+	printf("x86-64 calling C:\n");
+	asm_kernel_start(n, A, X, Y, Z);
+	display_results(n, Z);
+	printf("\n");
 	free(X);
 	free(Y);
 	free(Z);

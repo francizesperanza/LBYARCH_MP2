@@ -1,26 +1,44 @@
 section .data
 ;msg db "Hi, this is the ASM kernel. Thank yewww",13,10,0
-varn dd 3
-vara dq 2.0
-varx dq 1.0,2.0,3.0
-vary dq 11.0,12.0,13.0
-varz dq 0,0,0
+
 
 section .text
 bits 64
 default rel
-global asm_kernel_start
 
+global asm_kernel_start
 extern printf
-extern cFunc
 
 asm_kernel_start:
-	sub rsp, 8*15
-	mov rcx, [varn]
-	mov rdx, [vara]
-	lea r8, [varx]
-	lea r9, [vary]
-	lea rax, [varz]
-	call cFunc
-	add rsp, 8*15
-	ret
+;rcx is int n, xmm1 is float A, r8 is X array, r9 is Y,Z is r10
+push rsi
+push rbp
+mov rbp,rsp
+add rbp, 16
+add rbp, 8
+xor rax,rax
+	
+mov rsi, [rbp+32]
+mov r10, rsi
+	
+	
+	operate:
+		mov r12,rcx
+		dec r12					;makes it loop to first element
+		movss xmm8,[r8+4*r12]	;xmm8 is the element to be multiplied to A
+
+		;multiplication
+		vmulss xmm5,xmm8,xmm1
+		movss [r10+4*r12],xmm5
+
+		;addition
+		movss xmm8,[r10+4*r12]
+		movss xmm9,[r9+4*r12]
+		vaddss xmm5, xmm9, xmm8
+		movss [r10+4*r12],xmm5
+
+	LOOP operate
+
+pop rbp
+pop rsi
+ret
