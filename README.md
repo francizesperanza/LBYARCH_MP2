@@ -18,7 +18,8 @@ Charles Joseph V. Hinolan
 
 ---
 
-# Execution Times
+# Average Execution Times
+*See testing_results.xlsx for the results of the 30 tries*
 
 ### Debug Mode
 
