@@ -55,7 +55,7 @@ void version_testing (int n){
 	printf("\nExecution time of C Implementation: %.5f seconds\n", exec_time);
 
 	/* x86_64 Implementation */
-	printf("\nx86-64 calling C:\n");
+	printf("\nC calling x86-64:\n");
 
 	start2 = clock();
 	asm_kernel_start(n, A, X, Y, Z);
