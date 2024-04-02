@@ -72,9 +72,11 @@ In Debug Mode, the x86_64 kernel performs noticeably faster than the C kernel. T
 
 ### Debug Mode
 
-![image](https://github.com/francizesperanza/LBYARCH_MP2/assets/113343391/a595ac17-66f1-4343-a038-d4032df40157)
+![image](https://github.com/francizesperanza/LBYARCH_MP2/assets/113343391/1f973b5d-36eb-4b1e-a413-0d97fc10cbc0)
+
 
 ### Release Mode
 
-![image](https://github.com/francizesperanza/LBYARCH_MP2/assets/113343391/6d2c2a42-d95a-4197-829e-f5cb4ba7b739)
+![image](https://github.com/francizesperanza/LBYARCH_MP2/assets/113343391/ec0269c7-2aa2-46a6-85ff-8364512aaa83)
+
 
