@@ -1,6 +1,7 @@
 # LBYARCH_MP2
-
 Group 10 S14
+
+A simple program that tests the execution time between C and Assembly through implementations of the SAXPY function
 
 Members: 
 
